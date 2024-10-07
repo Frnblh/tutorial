@@ -4,25 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple I/O</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for center alignment */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Output styling */
+        #outputArea {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Simple Input and Output</h1>
-    
-    <!-- Input Field -->
-    <label for="inputBox">Enter your text:</label>
-    <input type="text" id="inputBox" placeholder="Type something here...">
-    
-    <!-- Button -->
-    <button onclick="displayInput()">Submit</button>
+    <div class="container">
+        <h1>Simple Input and Output</h1>
+        
+        <!-- Input Field -->
+        <label for="inputBox">Enter your text:</label>
+        <input type="text" id="inputBox" placeholder="Type something here...">
+        
+        <!-- Button -->
+        <button onclick="displayInput()">Submit</button>
 
-    <!-- Output Section -->
-    <p id="outputArea"></p>
+        <!-- Output Section -->
+        <p id="outputArea"></p>
+    </div>
 
     <!-- JavaScript for I/O functionality -->
     <script>
         function displayInput() {
             var userInput = document.getElementById("inputBox").value;
-            document.getElementById("outputArea").innerText = "You entered: " + userInput;
+            if (userInput.trim() !== "") {
+                document.getElementById("outputArea").innerText = "You entered: " + userInput;
+            } else {
+                document.getElementById("outputArea").innerText = "Please enter some text.";
+            }
         }
     </script>
 </body>
