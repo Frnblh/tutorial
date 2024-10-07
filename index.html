@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple I/O</title>
+</head>
+<body>
+    <h1>Simple Input and Output</h1>
+    
+    <!-- Input Field -->
+    <label for="inputBox">Enter your text:</label>
+    <input type="text" id="inputBox" placeholder="Type something here...">
+    
+    <!-- Button -->
+    <button onclick="displayInput()">Submit</button>
+
+    <!-- Output Section -->
+    <p id="outputArea"></p>
+
+    <!-- JavaScript for I/O functionality -->
+    <script>
+        function displayInput() {
+            var userInput = document.getElementById("inputBox").value;
+            document.getElementById("outputArea").innerText = "You entered: " + userInput;
+        }
+    </script>
+</body>
+</html>
